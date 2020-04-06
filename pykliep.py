@@ -175,10 +175,10 @@ class DensityRatioEstimator:
     def predict(self, X, sigma=None):
         """ Equivalent of w(X) from the original paper."""
         
-        #X = self._reshape_X(X)
+        X = self._reshape_X(X)
         if not self._fitted:
             raise Exception('Not fitted!')
         x_arr=np.dot(self._phi(X, sigma=sigma), self._alpha)
-        return np.reshape(x_arr,(X.shape[0]))
+        return x_arr #np.reshape(x_arr,(X.shape[0]))
 
     
