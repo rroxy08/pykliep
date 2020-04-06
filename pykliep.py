@@ -178,6 +178,6 @@ class DensityRatioEstimator:
         X = self._reshape_X(X)
         if not self._fitted:
             raise Exception('Not fitted!')
-        return np.dot(self._phi(X, sigma=sigma), self._alpha).reshape((X.shape[0],))
+        return np.dot(self._phi(X, sigma=sigma), self._alpha).reshape((X.shape[0]))
 
     
